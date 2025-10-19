@@ -5,7 +5,10 @@ providers = ["node"]
 nixPkgs = ["nodejs_20", "pnpm"]
 
 [phases.install]
-cmds = ["pnpm install --no-frozen-lockfile"]
+cmds = [
+  "rm -rf node_modules package-lock.json npm-shrinkwrap.json",
+  "pnpm install --no-frozen-lockfile"
+]
 
 [phases.build]
 cmds = ["pnpm run build"]
