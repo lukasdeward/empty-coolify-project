@@ -1,15 +1,14 @@
-# Use Node 20 and NPM
-[phases.setup]
-nixPkgs = ["nodejs_20", "npm"]
-
+# Use Node 20 with pnpm
 providers = ["node"]
 
-[phases.install]
-cmds = ["npm install -g corepack", "corepack enable", "corepack prepare npm@9.1.4 --activate", "npm install"]
+[phases.setup]
+nixPkgs = ["nodejs_20", "pnpm"]
 
+[phases.install]
+cmds = ["pnpm install"]
 
 [phases.build]
-cmds = ["npm run build"]
+cmds = ["pnpm run build"]
 
 [start]
 cmd = "node .output/server/index.mjs"
