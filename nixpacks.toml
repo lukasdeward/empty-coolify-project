@@ -6,7 +6,7 @@ providers = ["node"]
 
 [phases.install]
 cmds = ["npm install -g corepack", "corepack enable", "corepack prepare npm@9.1.4 --activate", "npm install"]
-^
+
 
 [phases.build]
 cmds = ["npm run build"]
